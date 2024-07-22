@@ -1,0 +1,18 @@
+name: basksure
+services:
+  backsure:
+    image: backsure
+    build: .
+    container_name: backsure
+    environment:
+      SQL_SERVER: 'localhost'
+      SQL_PORT: '1433'
+      SQL_USER: 'your_sql_user'
+      SQL_PASSWORD: 'your_sql_password'
+      SQL_DATABASE_NAME: 'your_database'
+      MINIO_ENDPOINT: 'your_minio_endpoint'
+      MINIO_ACCESS_KEY: 'your_minio_access_key'
+      MINIO_SECRET_KEY: 'your_minio_secret_key'
+      MINIO_BUCKET_NAME: 'your_minio_bucket'
+      MINIO_FILE_PATH: 'backups'
+    restart: on-failure:3
